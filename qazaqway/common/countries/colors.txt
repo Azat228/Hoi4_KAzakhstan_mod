@@ -3,6 +3,10 @@ QAZ = {
 	color = rgb { 53 184 255 }
 	color_ui = rgb { 255 73 121 }
 }
+KES = {
+	color = rgb { 53 20 98 }
+	color_ui = rgb { 255 73 121 }
+}
 GER = {
 	color = HSV { 0.1 0.15 0.4 }
 	color_ui = rgb { 138 155 116 }
