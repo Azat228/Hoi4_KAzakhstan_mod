@@ -1,0 +1,74 @@
+### search_filters = {FOCUS_FILTER_POLITICAL}
+### search_filters = {FOCUS_FILTER_RESEARCH}
+### search_filters = {FOCUS_FILTER_INDUSTRY}
+### search_filters = {FOCUS_FILTER_STABILITY}
+### search_filters = {FOCUS_FILTER_WAR_SUPPORT}
+### search_filters = {FOCUS_FILTER_MANPOWER}
+### search_filters = {FOCUS_FILTER_ANNEXATION}
+### search_filters = {FOCUS_FILTER_POLITICAL_CHARACTER}
+### search_filters = {FOCUS_FILTER_MILITARY_CHARACTER}
+
+focus_tree = {
+	id = turkestan_focus_tree
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 50
+			tag = KES
+		}
+	}
+	
+	default = no
+
+	continuous_focus_position = { x = 50 y = 2500 }
+
+	focus = { # NAVY
+		id = turkestan_go_to_destroy
+		icon = GFX_goal_turkestan_go_to_destroy
+		x = 10
+		y = 2
+		#relative_position_id = AUS_continue_old_production
+		available = {
+			NOT = {is_in_faction_with = QAZ}
+		}
+		bypass = {
+
+		}
+		cost = 1
+		#prerequisite = { focus = AUS_coastal_defence_forts focus = AUS_continue_old_production }		
+		cancel_if_invalid = yes
+		available_if_capitulated = no
+		completion_reward = {
+			add_political_power = 100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = { # NAVY
+		id = we_need_to_prepare
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		x = 0
+		y = 1
+		relative_position_id = turkestan_go_to_destroy
+		available = {
+			NOT = {is_in_faction_with = QAZ}
+		}
+		bypass = {
+
+		}
+		cost = 1
+		prerequisite = { focus = turkestan_go_to_destroy }		
+		cancel_if_invalid = yes
+		available_if_capitulated = no
+		completion_reward = {
+			add_political_power = 100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+}
